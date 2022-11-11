@@ -1,0 +1,38 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "굴림", sans-serif;
+}
+#wrap{
+    width: 200px;
+    margin: 20px auto;
+}
+#wrap .page{
+    /* border: 1px solid red; */
+    text-align: right;
+    margin-bottom: 10px;
+}
+#wrap .page .page_n{
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin-right: 10px;
+}
+#wrap .page button{
+    border: none;
+    background: #666;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    line-height: 1.5;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+#wrap .vis{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #505900;
+    overflow: hidden;
+}

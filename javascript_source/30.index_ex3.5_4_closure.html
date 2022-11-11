@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로져 Closure 활용</title>
+    <script>
+        //클로져(Closure) : 일반적으로 함수 내 지역 변수는 함수 밖에서 참조할 수 없지만,
+        //클로져는 함수 내 지역 변수를 함수 밖에서도 참조할 수 있게 해줍니다.
+        //multifly(n) 함수를 호출할 때 지역 변수 n값을 초기화 하지 않고,
+        //이전에 연산된 값으로 참조해야 할 때 클로져를 사용합니다.
+        function multiply(n){
+            return function(){
+                return n *= n;     //n = n * n;
+            }
+        }
+        var num1 = multiply(10);
+        document.write(num1() + '<br>');        //10 * 10 = 100
+        document.write(num1() + '<br>');        //100 * 100 = 10000  
+
+        var num2 = multiply(20);
+        document.write(num2() + '<br>');        //20 * 20 = 400
+        document.write(num2() + '<br>');        //400 * 400 = 160000  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

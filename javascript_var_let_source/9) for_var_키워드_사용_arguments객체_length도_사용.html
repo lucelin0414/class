@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments 객체 활용</title>
+    <script>      
+
+        // 매개변수의 개수가 정해지지 않은 함수의 경우,
+        // arguments 객체를 사용하여 함수를 만들 수 있습니다.
+        // 이 경우, arguments[j]에서 인덱싱값으로 범위가 정해지기 때문에
+        // for문 안에 var로 선언한 변수 j는 block을 벗어나지 않습니다.
+        function showSubject(){            
+            for(var j=0; j < arguments.length; j++) {  // arguments.length = 4;
+                document.write('var 키워드 사용 변수 j 인덱싱 인수값 = ' + arguments[j] + '<br>');             
+            }
+        }
+        showSubject('html', 'css', 'javascript', 'jQuery');   
+        document.write('<hr>');
+        document.write('@ 2) 블록 밖에 ' + j);      
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

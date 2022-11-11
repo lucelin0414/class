@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        // for문에서 var 키워드를 생략한 변수 i는 항상 전역변수가 되고,
+        // 실행 컨텍스트에 저장되지 않기 때문에, 코드가 실행되기 전에는 존재하지 않으며,
+        // 그런 이유로, 코드가 실행되기 전에는 접근할 수가 없습니다.
+        // 이 경우, for 문 안에서 var 키워드 생략 변수 i가 block을 벗어나서 유효하게 되는 문제점이 있습니다.
+        for(i = 0; i < 5; i++){
+            document.write('1) 블록 안에 ' + i + '<br>');            
+        }
+        document.write('<hr>');
+        document.write('@ 1) 블록 밖에 ' + i);
+      
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

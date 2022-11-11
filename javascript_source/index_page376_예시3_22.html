@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'생성자 함수'로 생성된 객체의 속성 변경, 추가, 삭제</title>
+    <script>
+        //1.'생성자 함수'로 생성된 객체의 속성 추가나 삭제,
+        //변경은 다른 객체의 속성에는 영향을 주지 않습니다.
+        //2. sub1 객체에 추가, 제거, 변경된 속성들은 sub1 객체에만 적용되고
+        //sub2 객체의 속성에는 영향을 주지 않습니다.
+        //속성의 추가, 제거, 변경을 모든 객체에 적용하려면 Info 함수 안에
+        //속성들을 수정해야 합니다.
+        function Info(subject, credit){
+            this.subject = subject;
+            this.credit = credit;
+            this.printOut = function(){
+                return this.subject + ', ' + this.credit + '학점';
+            };
+        };
+        var sub1 = new Info('html', 3);
+        sub1.days = 20;   //속성추가
+        document.write(sub1.days + '<br>');  //20
+        delete sub1.credit; //속성제거
+        document.write(sub1.credit + '<br>');
+        sub1.printOut = function(){       //속성 변경
+            return this.subject + ', ' + this.days + '일';
+        }
+        document.write(sub1.printOut());  //html, 20일
+
+        document.write('<hr>');
+        document.write('<hr>');
+
+        var sub2 = new Info('css', 2);        //원본 Info의 속성이 적용된다.
+        document.write(sub2.days + '<br>');   //underfinde(sub1에서 추가하거나 제거, 변경한 속성은 sub2에서 반영되지 않는다.)
+        document.write(sub2.credit + '<br>'); //2
+        document.write(sub2.printOut());      //css, 2학점
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

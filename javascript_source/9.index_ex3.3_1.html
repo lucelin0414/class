@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var subject = 'css';
+        var score = 100;
+        console.log(subject + '과목 성적은' + score)
+
+        var major = "html"
+        var num = 95;
+        console.log(`${major} 과목 성적은 ${score}`)
+        //`(벡틱)
+
+        var devidend = 2221;
+        var remainder = devidend % 2;
+        var comment = '';
+
+        if (remainder === 0) {
+            comment = '3의배수';
+        }
+        console.log(comment);
+
+        function solution(num) {
+            var answer = '';
+            if(num % 2 == 0) { //짝수인 경우
+                answer= 'Even';
+            } else //홀수인 경우
+                answer= 'Odd';
+        return answer;
+        }
+        function solution(num) {
+           var answer = '';
+           if(num % 2 !== 0) { //홀수인 경우
+            answer= 'Odd';
+        } else //짝수인 경우
+            answer= 'Even';
+        return answer;
+        }
+
+        var score = 10;
+        ++score; //바로 올려진 값을 보여줌 (전치)
+        score++; //초기 값을 보여주지만 하나 올라감 (후치)
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

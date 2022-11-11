@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 생성</title>
+    <script>
+        //객체 리터럴
+        var circle = {
+            color : 'yellow',
+            diameter : 100,
+            radius : function(){
+                return this.diameter / 2;
+            }
+        };
+        document.write(circle.color + '<br>');
+        document.write(circle.diameter + '<br>');
+        document.write(circle.radius() + '<br>');
+
+        document.write('<hr>');
+        
+        //객체 생성자 함수 활용
+        function Triangle(b, h){
+            this.base = b;
+            this.height = h;
+            this.area = function(){
+                return this.base * this.height / 2;
+            };
+        };
+        var triangle1 = new Triangle(15, 15);
+        document.write(triangle1.base + '<br>');  //15
+        document.write(triangle1.height + '<br>');  //15
+        document.write(triangle1.area() + '<br>');  //112.5
+
+        document.write('<hr>');
+
+        var triangle2 = new Triangle(25, 10);
+        document.write(triangle2.base + '<br>'); //25
+        document.write(triangle2.height + '<br>'); //10
+        document.write(triangle2.area() + '<br>'); //125
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

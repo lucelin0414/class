@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 5px;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // add() : $("#m1 > div").add("#m1 > p")
+            // #m1 > div 요소와 추가적으로 #m1 > p 요소를 선택합니다.
+            $("#m1 > div").add("#m1 > p").css("border", "2px solid red");
+            // addBack() :$("#m2").children("p").addBack();
+            // p요소와 추가적으로 "이전 선택 요소인 #m2"를 선택합니다. 
+            var addBack = $("#m2").children("p").addBack();
+            console.log(addBack);
+            addBack.css("border", "2px solid orange");
+            // $("#m2").children("p").addBack().css("border", "2px solid orange");
+            // end() : $("#m3").find("span").css("border", "2px solid yellow")의 실행이 끝나면(end()), 처음 선택자 $("#m3")로 다시 돌아와서 find("em").css("border", "2px solid green")가 실행됩니다.
+            $("#m3").find("span").css("border", "2px solid yellow").end().find("em").css("border", "2px solid green");
+            // is() : 선택한 요소를 판별해 주는 선택자로, 보통 if문의 조건식에 사용되며, 아래의 경우, #m4의 자식 요소 중에서 p 요소가 존재하는 여부를 판별하여, console.log로 결과를 나타내주는 예시입니다.
+            if($("#m4").children().is("p")){
+                console.log("p 요소가 존재합니다.");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <div>내용1_1</div>
+        <p>내용1_2</p>
+    </div>    
+    <div id="m2">
+        <p>내용2</p>
+    </div>
+    <div id="m3">
+        <span>내용3_1</span>
+        <p style="display: inline;">내용_추가</p>
+        <em>내용3_2</em>
+    </div>
+    <div id="m4">
+        <p>내용4</p>
+    </div>
+</body>
+</html>

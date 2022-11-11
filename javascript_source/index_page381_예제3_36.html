@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 활용</title>
+    <script>
+        class SubjectInfo {
+            constructor(subject, credit){
+                this.subject = subject;        //subject : 과목명
+                this.credit = credit;          //credit : 학점
+                this.days = [80, 120, 140];    //days : 과목별 수업일수
+                this.day = this.days[0];       //day : 수업일    this.day[0] ----> 80을 의미, this.days[1] ------> 120을 의미, this.days[2] ------> 140을 의미
+            }
+            printOut(){
+                return '과목 : ' + this.subject + ', 학점 : ' + this.credit + ', 수업일 : ' + this.day; 
+            }
+            get lessonTime(){
+                return this.day;
+            }
+            set lessonTime(num){
+                this.day = this.days[num];
+            }
+        }
+        var sub1 = new SubjectInfo('html', 3);
+        document.write(sub1.subject + '<br>');
+        document.write(sub1.printOut() + '<br>');
+        document.write(sub1.lessonTime + '<br>');  //get lessonTime() --> this.days[0] : 80
+        sub1.lessonTime = 1;  //set lessonTime(num) --> this.days[1] :120
+        document.write(sub1.lessonTime + '<hr>');  
+
+
+        var sub2 = new SubjectInfo('css', 2);
+        document.write(sub2.subject + '<br>');   //css
+        sub2.lessonTime = 2;
+        document.write(sub2.printOut() + '<br>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

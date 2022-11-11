@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //% 나머지 활용
+        var evenOdd = 222;
+        var result = evenOdd % 2;
+        var comment;
+        //=== (일치 연산자) 는 앞과 뒤가 같은 타입과 값이 나와야 true가 된다. 0 === '0' 은 숫자 === 문자 이므로 false 이다.
+        if(result === 0){
+            comment = evenOdd + '는(은) "짝수" 입니다!';
+        } else {
+            comment = evenOdd + '는(은) "홀수" 입니다!';
+        }
+        console.log(comment);
+
+        // ++, --
+        var increse = 0;
+        var increse2 = 0;
+        var add = 0;
+        ++increse;
+        console.log(increse);  // 1
+        increse2++; // 0 (1 증가했지만 보여주는 값은 0이다.)
+        console.log(increse2); // 1 (앞에서 1 증가한 값을 보여줌)
+
+        var score = 10;
+        console.log(++score); //11
+        console.log(++score); //12
+
+        var score2 = 10;
+        console.log(score2++); //10
+        console.log(score2++); //11
+        console.log(score2); //12
+
+        var score3 = 10;
+        console.log(--score3); //9
+        console.log(--score3); //8
+
+        var score4 = 10;
+        console.log(score4--); //10
+        console.log(score4--); //9
+        console.log(score4); //8
+
+        var calculation = 3 - 5 * 8 / 2 + 3; //-14
+        //연산1 = 5 * 8 (*와 / 중에서 좌측에 있는거 먼저 연산 처리)
+        //연산2 = 40 / 2 = 20
+        //연산3 = 3 - 20 = -17 (+와 -중에서 좌측에 있는거 먼저 연산 처리)
+        //연산4 = -17 + 3 = -14
+        console.log(calculation);
+
+        var calculation2 = 5 - 2 * 8;
+        console.log(calculation2); //-11
+
+        var calculation2 = (5 - 2) * 8;
+        //연산1 = 5 - 2 = 3
+        //연산2 = 3 * 8 = 24
+        console.log(calculation2); //24
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

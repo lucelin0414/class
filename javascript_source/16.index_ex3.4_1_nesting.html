@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문_if 중첩</title>
+    <script>
+        var html = Number(prompt('html 점수입력', ''));   //prompt '점수입력' ㅡㅡㅡㅡㅡㅡ> Number('점수') = 점수
+        var css = Number(prompt('css 점수 입력', ''));
+        var javascript = Number(prompt('javascript 점수 입력', ''));
+        var avg = (html + css + javascript) / 3;
+        var comment;
+        if(avg >= 60){
+            if (html < 40){
+                comment = 'HTML' + ' 40점 미만 불합격';
+            } else if (css < 40){
+                comment = 'CSS' + ' 40점 미만 불합격';
+            } else if (javascript < 40){
+                comment = 'JAVASCRIPT' + ' 40점 미만 불합격';
+            } else{
+                comment = '평균 ' + avg + ' 점 합격';
+            }
+        } else {
+            comment = '평균 ' + avg + ' 점 불합격입니다!';
+        }
+        document.write(comment);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

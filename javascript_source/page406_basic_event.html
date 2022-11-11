@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 이벤트 모델</title>
+</head>
+<body>
+    <!-- 기본 이벤트 모델은 html 요소를 취득한 후 이벤트를 '객체의 메서드' 형식(객체.메서드 = function(){...})으로 연결하는 방식입니다. -->
+    <!-- HTML 요소를 취득할 때는 순서상 '취득할 요소'가 '요소 취득 명령어' 이전에 있어야 합니다. -->
+    <!-- 만약에, '취득할 요소'가 '요소 취득 명령어' 이후에 오면 반드시 load 이벤트를 적용해야 합니다 -->
+    <button id="bt">클릭</button>   <!--취득할 요소-->
+    <script>
+        var bt = document.getElementById('bt');  //요소 취득 명령어
+        bt.onclick = function(){
+            console.log('ok');
+        };
+    </script>
+</body>
+</html>

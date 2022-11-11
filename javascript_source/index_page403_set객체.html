@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set 객체 생성 활용</title>
+    <script>
+        //Set 객체는 ECMAScript2015(ES6)에서 추가된 객체입니다. Set 객체의 경우, 키는 없고 값만 존재하며 중복된 값은 허용하지 않습니다.
+        var sub = new Set();
+        sub.add('a');
+        sub.add('b');
+        sub.add('c');
+        sub.add('a');  
+        document.write(sub.size + '<hr>');  //3 : 중복 값 허용 안됨
+        document.write(sub.has('c') + '<hr>');  //true
+        for(var value of sub.values()){
+            document.write(value + ' ');     //a b c
+        }        
+        document.write('<hr>')
+        sub.delete('a');
+        document.write(sub.has('a') + '<hr>');  //false
+        sub.clear();
+        document.write(sub.size);   // 0
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var today = new Date(2022, 10, 1);
+        var afterDay = new Date(2022, 10, 5);
+        var diffDay = afterDay.getTime() - today.getTime();
+        document.write(diffDay + '<hr>');   //345600000
+                                        //1000(밀리초) 60(초) 60(분) 24(시간)
+        var willDay = Math.ceil(diffDay / 1000 / 60 / 60 / 24); 
+        document.write(willDay + '일')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

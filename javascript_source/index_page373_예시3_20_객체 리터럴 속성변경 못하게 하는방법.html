@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 리터럴 속성 추가, 삭제, 변경 막기</title>
+    <script>
+        //'객체 리터럴'의 속성 추가, 삭제, 변경 처리
+        var info1 = {
+            subject : 'html',
+            credit : 3,
+            printOut : function(){
+                return this.subject + ', ' + this.credit + '학점;'
+            }
+        };
+        info1.days = 20; //속성추가
+        document.write(info1.days);                //20
+        document.write('<hr>');
+
+        delete info1.credit;                       //속성 삭제
+        document.write(info1.credit);              //undefined
+        document.write('<hr>');
+
+        info1.printOut = function(){
+            return this.subject + ', ' + this.days + '일'
+        }
+        document.write(info1.printOut());
+
+
+        document.write('<hr>');
+        document.write('<br>');
+        document.write('<br>');
+        document.write('<br>');
+
+
+         //'객체 리터럴'의 속성 추가, 삭제, 변경 처리 불가능하게 함.
+         var info2 = {
+            subject : 'html',
+            credit : 3,
+            printOut : function(){
+                return this.subject + ', ' + this.credit + '학점;'
+            }
+        };
+        Object.freeze(info2);             //Object.freeze를 사용하여 객체를 동결시켜 수정되는 것을 방지할 수 있음.
+        info2.days = 20; //속성추가
+        document.write(info2.days);                //20 (동결되서 undefined)
+        document.write('<hr>');
+
+        delete info2.credit;                       //속성 삭제 (동결되서 기존 credit 값인 3이 나옴)
+        document.write(info2.credit);              //undefined (동결되서 undefined)
+        document.write('<hr>');
+
+        info2.printOut = function(){
+            return this.subject + ', ' + this.days + '일' // document.write(info2.printOut()) 은 동결되서 기존 값이 나온다.
+        }
+        document.write(info2.printOut());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

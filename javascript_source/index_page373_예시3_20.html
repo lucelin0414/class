@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 리터럴</title>
+    <script>
+        var info = {
+            subject : 'css',
+            credit : 1,
+            printOut : function(){
+                return info.subject + ', ' + info.credit + '학점';            
+            }
+        };
+        document.write(info.subject + '<br>');    //css
+        document.write(info.credit + '<br>');    //1
+        document.write(info.printOut());    //css, 1학점
+        document.write('<hr>');
+
+        //'객체 리터럴'의 속성 추가, 삭제, 변경 처리
+        var info2 = {
+            subject : 'html',
+            credit : 3,
+            printOut : function(){
+                return this.subject + ', ' + this.credit + '학점;'
+            }
+        };
+        document.write(info2.subject + '<br>');    //html
+        document.write(info2.credit + '<br>');    //3
+        document.write(info2.printOut());         //html, 3학점
+        document.write('<hr>');
+
+        info2.days = 20; //속성추가
+        document.write(info2.days);                //20
+        document.write('<hr>');
+
+        delete info2.credit;                       //속성 삭제
+        document.write(info2.credit);              //undefined
+        document.write('<hr>');
+
+        info2.printOut = function(){
+            return this.subject + ', ' + this.days + '일'
+        }
+        document.write(info2.printOut());
+        document.write('<hr>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

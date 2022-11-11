@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역 변수와 지역 변수 선언 위치별 차이 이해</title>
+    <script>
+        //함수 블록 {} 안에 있는 kor 변수는 전역 변수입니다.
+        //따라서, getScore() 함수를 호출하게 되면 kor 변수 값이 90에서 100으로 바뀌게 됩니다.
+        var kor = 90;
+        function getScore(){
+            kor = 100;  //전역 변수
+            console.log(kor);  //100
+        } 
+        getScore();
+        console.log(kor); //100
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

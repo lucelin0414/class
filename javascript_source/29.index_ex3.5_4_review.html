@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 범위 scope</title>
+    <script>
+        //함수의 전역 변수
+        var sum1 = 10;
+        function add1() {
+            sum1 = 20;
+        }
+        add1();
+        document.write('var 생략 전역 변수값 : ' + sum1);       //20
+        document.write('<hr>')
+
+        //함수의 지역 변수
+        var sum2 = 30;
+        function add2() {
+            var sum2 = 40;
+                document.write('var 사용 지역 변수값 : ' + sum2 + '<br>');
+        }
+        add2()
+        document.write('var 사용 전역 변수값 : ' + sum2)
+        document.write('<hr>')
+
+        //블록의 지역 변수
+        var num1 = 50;
+        if(num1 === 50){
+            var num1 = 60;
+        }
+        document.write('var 사용 전역 변수값 : ' + num1 + '<br>');
+        document.write('<hr>');
+
+        let num2 = 70;
+        if(num2 === 70){
+            let num2 = 80
+            document.write('let 사용 지역 변수값 : ' + num2 + '<br>');
+            }
+        document.write('let 사용 전역 변수값 : ' + num2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

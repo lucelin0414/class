@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() 메서드</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            console.log($("#site > a:eq(0)").attr("href"));
+            // http://www.kbs.co.kr
+            // var test = $("#site > a:eq(1)")            
+            // console.log(test); // a           
+            // test.attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site a").attr("title", function(){
+                return "새창";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="site">
+        <a href="http://www.kbs.co.kr" target="_blank">KBS한국방송</a>
+        <a href="http://www.mbc.co.kr" target="_blank">MBC문화방송</a>
+        <a href="http://www.sbs.co.kr" target="_blank">SBS서울방송</a>
+    </div>    
+</body>
+</html>

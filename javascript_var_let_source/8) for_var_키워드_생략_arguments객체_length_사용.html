@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments 객체 활용</title>
+    <script>      
+
+        // 매개변수의 개수가 정해지지 않은 함수의 경우,
+        // arguments 객체를 사용하여 함수를 만들 수 있습니다.
+        // 이 경우, arguments[i]에서 인덱싱값으로 범위가 정해지지만,
+        // for문에서 var 키워드를 생략한 변수 i는 항상 전역변수가 되고,
+        // 실행 컨텍스트에 저장되지 않기 때문에, 코드가 실행되기 전에는 존재하지 않으며,
+        // 그런 이유로, 코드가 실행되기 전에는 접근할 수가 없습니다.
+        // 결과적으로, for 문 안에서 var 키워드 생략 변수 i가 block을 벗어나서 유효하게 되는 문제점이 있습니다.        
+        function showSubject(){            
+            for(i=0; i < arguments.length; i++) {  // arguments.length = 4;
+                document.write('var 키워드 생략 변수 i 인덱싱 인수값 = ' + arguments[i] + '<br>');             
+            }
+        }
+        showSubject('html', 'css', 'javascript', 'jQuery');  
+        document.write('<hr>');
+        document.write('@ 1) 블록 밖에 ' + i);                      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

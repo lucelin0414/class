@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in문</title>
+    <script>
+        var info = {
+            subject : 'javascript',
+            credit : 3,
+            days : 20,
+            tuition : 1000  //tuition : 수업료
+        };
+        for (var i in info) {
+            document.write(i + ' : ' + info[i] + '<br>');    //i : info 객체속성의 이름 / info[i] : 속성의 값
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

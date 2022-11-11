@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map 객체 생성 활용</title>
+    <script>
+        var sub = new Map();
+        sub.set('html', 3);
+        sub.set('css', 2);
+        sub.set('javascript', 4);
+        sub.set('jQuery', 5);
+        document.write(sub.size + '<hr>'); //4 : sub 객체의 속성 개수를 취득합니다.
+        document.write(sub.get('css') + '<hr>');
+        document.write(sub.has('javascript') + '<hr>'); //true ->'css' 키의 존재여부를 파악합니다.
+        for(var key of sub.keys()){
+            document.write(key + ' ');    //html css javascript jQuery : sub 객체의 모든 키를 가져옵니다.
+        }
+
+        document.write('<hr>')
+
+        for(var key of sub.values()){
+            document.write(key + ' ');    //sub 객체의 모든 키 값을 가져옵니다.
+        }
+        document.write('<hr>')
+
+        for(var key of sub.entries()){
+            document.write(key + ' ');    //키와 값을 배열로 가져옵니다.
+        }
+        document.write('<hr>')
+
+        sub.delete('html'); //'html' 키를 삭제 처리합니다.
+        document.write(sub.has('html'));  //false
+        sub.clear();  //모든 요소를 삭제 처리합니다.
+        document.write('<hr>')
+        document.write(sub.size);   //0
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

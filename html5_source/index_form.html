@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .f1{color: red; font: bold; font-weight: bold; font-size: xx-large;}
+    </style>
+</head>
+<body>
+    <form action="http://localhost/get/formTest.jsp" method="post">
+        <!-- Apache Tomcat 서버는 설정을 바꾼 뒤 재구동 시켜야 바뀐 설정이 적용된다 -->
+        <fieldset>
+            <legend><p class="f1">로그인</p></legend>
+        <p>ID : <input type="text" name="id"></p>
+        <p>PW : <input type="password" name="passwd"></p>
+        </fieldset>
+        <br>
+        <input type="submit" value="전송을 합니다!">
+        <input type="reset" value="다시 작성을 합니다!">
+    </form>
+</body>
+</html>

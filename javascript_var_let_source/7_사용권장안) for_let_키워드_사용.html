@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        // ECMAScript2015(ES6)에서 추가된 let 변수는 block 레벨에서 범위가 정해지기 때문에,
+        // for 문 안에서 let으로 선언한 변수 k는 block을 벗어나지 않습니다.
+        for(let k = 0; k < 5; k++){
+            document.write('4) 블록 안에 ' + k + '<br>');            
+        }
+        document.write('<hr>');
+        document.write('@ 4) 블록 밖에 ' + k);   
+       
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

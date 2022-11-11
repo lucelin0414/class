@@ -1,0 +1,55 @@
+※ 자바스크립트 클로저(Closure) 이해
+(참고로, Closure의 영어 의미는 "폐쇄" 입니다)
+
+1. 내부 함수 (inner function)와 스코프 체이닝
+
+function init(){
+  var name = "Mozila";
+  function displayName(){
+    alert(name);
+ }
+  displayName();
+}
+init();
+
+1) 특정 함수 안에 위치한 함수를 내부함수라고 합니다. 여기서는 displayName이 내부함수입니다.
+2) 자바스크립트의 스코프 체이닝이란 위의 예시와 같이 displayName은 내부 함수이기 때문에
+    init() 함수 내에서만 사용이 가능하고, 내부 함수는 자신을 둘러싸고 있는
+    외부 함수의 변수에 접근이 가능하다는 것을 말합니다.
+
+2. 클로저(Closure)
+
+function makeFunc(){
+  var name = 'Mozila';
+  function displayName(){
+   alert(name);
+  }
+  return displayName;
+}
+var myFunc = makeFunc();
+myFunc();
+
+displayName을 makeFunc 함수 외부에서 호출하려면 어떻게 해야할까요?
+함수를 return 하면 외부에서의 호출이 가능해집니다. (예시 : return displayName; ) -------★★★★★
+
+여기서 중요한 점은 displayName 함수의 참조값을 가지게된 myFunc 함수를 실행하면
+이미 호출이 끝난 makeFunc의 지역변수 name 값을 사용한다는 것입니다.
+몇몇 프로그래밍 언어에서 함수 안의 지역 변수는 함수가 실행되는 동안에만 존재합니다.
+이것 때문에 makeFunc의 실행이 끝나면, name 변수는 더 이상 존재하지 않는다고 생각할지도 모르지만,
+자바스크립트 코드는 흐름대로 잘 동작합니다. 이는 함수가 클로져(Closure)를 만들기 때문입니다.
+
+이미 생명 주기가 끝난 외부 함수의 변수를 참조하는 함수를 클로져(Closure)라고 합니다.
+여기서는 이미 실행이 끝난 makeFunc의 name 변수를 참조하는 displayName 함수가
+클로져(Closure)가 됩니다.
+
+makeFunc의 실행 컨텍스트는 사라졌지만, makeFunc의 변수 객체는 여전히 남아있고,
+displayName의 스코프체인으로 참조되고 있습니다.
+
+
+===================================================================
+
+[참고 웹사이트]
+1) https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
+2) https://hanamon.kr/javascript-%ED%81%B4%EB%A1%9C%EC%A0%80/
+
+

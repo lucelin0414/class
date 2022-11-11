@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+        // 참고로, ECMAScript2015(ES6)에서 추가된 const 변수는 block 레벨에서 범위가 정해지기 때문에,
+        // for 문 안에서 const로 선언한 변수는 block을 벗어나지 않고, 고정형 변수 const t = 0; 만 처리됩니다.
+        for(const t = 0; t < 5; t++){
+            document.write('3) 블록 안에 ' + t + '<br>');            
+        }
+        document.write('<hr>');
+        document.write('@ 3) 블록 밖에 ' + t);   
+       
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n = 90;
+        function rotate(obj){
+            obj.style.transform = "rotate(" + n  + "deg)";
+            n += 90;          //n = n + 90;
+            n %= 360;         //n = n % 360;
+        }
+    </script>
+</head>
+<body>
+    <h3>클릭하면 90도씩 이미지가 회전을 합니다.</h3>
+    <hr>
+    <img src="images/flower.jpg" alt="transform 연습 이미지" width="300px" height="300px" onclick="rotate(this)">   <!--this는 img 태그 자신을 의미-->
+</body>
+</html>

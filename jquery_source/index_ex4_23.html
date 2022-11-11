@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width, height 관련 메서드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;            
+        }
+        div{
+            padding: 20px;
+            margin: 20px;
+            background: #ff6600;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div").width(150).height(150);
+            console.log("width : " + $("div").width()); // 150
+            console.log("height : " + $("div").height()); // 150
+            console.log("innerWidth : " + $("div").innerWidth()); // 190
+            console.log("outerWidth : " + $("div").outerWidth(true)); // 230
+            console.log("innerHeight : " + $("div").innerHeight()); // 190
+            console.log("outerHeight : " + $("div").outerHeight(true)); // 230
+        });
+    </script>
+</head>
+<body>
+    <div>내용</div>
+</body>
+</html>

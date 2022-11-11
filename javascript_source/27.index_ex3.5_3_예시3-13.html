@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments 객체 활용</title>
+    <script>
+        function showSubject(){                //매개변수의 개수가 정해지지 않은 함수
+            console.log(arguments[0] + ', ' + arguments[1]);
+            console.log(arguments.length);
+        }
+        showSubject('html', "css")
+
+        function showSubject2(){
+            for(i=0; i < arguments.length; i++){    //arguments.length = 4;
+                console.log(arguments[i]);
+                //console.log(arguments[0]);  -----> html
+                //console.log(arguments[1]);  -----> css
+                //console.log(arguments[2]);  -----> javascript
+                //console.log(arguments[3]);  -----> jQuery
+                
+            }
+        }
+        showSubject2('html', 'css', 'javascript', 'jQuery');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax() 메서드 활용</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $.ajax({
+            //데이터를 읽어오는 방식
+            type: "GET",
+            //로드할 파일명
+            url : "http://192.168.0.106/dataset/data1.json",
+            //데이터 로드 형식
+            dataType: "json",
+            //success: 로드에 성공했을 때
+            //data는 data1.json 전체 데이터 의미
+            success: function(data){
+                var elem = "";
+                $.each(data, function(index, obj){
+                    elem += "<tr>";   //elem = elem + "<tr>";
+                    elem += "<th scope = 'row'>" + obj.name + "</th>"
+                    elem += "<td>" + obj.score1 + "</td>"
+                    elem += "<td>" + obj.score2 + "</td>"
+                    elem += "<td>" + obj.score3 + "</td>"
+                    elem += "<td>" + obj.score4 + "</td>"
+                    elem += "</tr>";   //elem = elem + "</tr>"
+                });
+                $("table tbody").append(elem);
+            },
+            //error: 로드에 실패하였을 경우,
+            //xhr = XHR(XMLHttpRequest)
+            error: function(xhr){
+                //에러 상태, 에러 내용을 console에 log형식으로 표현해 줌
+                console.log(xhr.status + " / " + xhr.errorText);
+            }
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>학생별 시험 점수</caption>
+        <thead>
+            <tr>
+                <th scope="col">이름</th>
+                <th scope="col">html</th>
+                <th scope="col">css</th>
+                <th scope="col">javascript</th>
+                <th scope="col">jQuery</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

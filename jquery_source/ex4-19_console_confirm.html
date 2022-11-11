@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>toggleClass() 메서드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            font-family: "굴림", sans-serif;
+            color: #999;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        #m_menu{
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: #262626;            
+        }
+        #m_menu a{
+            display: block;
+            padding: 20px;
+            border-top: 1px solid #2e2e2e;
+            border-bottom: 1px solid #2e2e2e;            
+        }
+        #m_menu a.m{            
+            background: #111; 
+            font-weight: bold;
+        }
+        #m_menu a.m.on{
+            color: #ff6600;            
+        }
+        #m_menu ul a{            
+            background: #3a3a3a;
+            text-indent: 20px;
+        }
+        #m_menu li ul{
+            display: none;
+        } 
+        #m_menu li ul.on{
+            display: block;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function() {            
+            // toggleClass()메서드 = 요소에 class 속성이 없으면 addClass()가 적용되고, class 속성이 있으면 removeClass()메서드가 적용됩니다.
+            $("#m_menu  a.m").click(function() {               
+                var test = $(this).next().addBack()
+                // console.log(this); // a.m
+                // console.log(test); // 0 : a.m, 1 : ul
+                //  find() : ul 요소의 하위 요소 중 .m, ul 요소를 선택합니다.                 
+                test.toggleClass("on").end();
+                test.find(".m, ul").end();
+                console.log(test.find(".m, ul").end());
+                // 0 : a.m.on , 1 : ul.on
+                test.parent().siblings();
+                // console.log(test.parent().siblings()); // 0 : li, 1 : li
+                test.find(".m, ul");
+                // console.log(test.find(".m, ul"));
+                // 0 : a.m, 1 : ul, 2 : a.m, 3 : ul, 4 : a.m, 5: ul
+                // console.log(test.toggleClass("on").end());  // ul             
+                
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="m_menu">
+        <li><a href="#" class="m">메뉴1</a>
+            <ul>
+                <li><a href="#" class="m">메뉴1_1</a>
+                    <ul>
+                        <li><a href="#">메뉴1_1_1</a></li>
+                        <li><a href="#">메뉴1_1_2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="m">메뉴1_2</a>
+                    <ul>
+                        <li><a href="#">메뉴1_2_1</a></li>
+                        <li><a href="#">메뉴1_2_2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="m">메뉴1_3</a>
+                    <ul>
+                        <li><a href="#">메뉴1_3_1</a></li>
+                        <li><a href="#">메뉴1_3_2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#" class="m">메뉴2</a>
+            <ul>
+                <li><a href="#">메뉴2_1</a></li>
+                <li><a href="#">메뉴2_2</a></li>
+                <li><a href="#">메뉴2_3</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="m">메뉴3</a>
+            <ul>
+                <li><a href="#">메뉴3_1</a></li>
+                <li><a href="#">메뉴3_2</a></li>
+                <li><a href="#">메뉴3_3</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

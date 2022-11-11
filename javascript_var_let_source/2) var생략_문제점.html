@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var 키워드 생략 문제점</title>
+    <script>
+        // var 키워드 생략 가능 : var 키워드를 생략한 변수들은 항상 전역변수가 되고,
+        // 실행 컨텍스트에 저장되지 않기 때문에 코드가 실행되기 전에는 접근할 수 없습니다.
+        // strict mode에서 var 키워드를 생략하면 RefereneceError가 발생합니다.
+        // 1) var 키워드를 생략한 x 는 전역변수입니다.
+        function varSkip() {
+            x = 10;
+            var y = 20;
+        }
+        varSkip();
+        document.write('블록 안에 var 생략 : ' + x + '<br>');
+        // document.write('블록 안에 var 사용 : ' + y + '<br>');  // y is not defined
+
+        document.write('<hr>');
+
+        // 2) var 키워드를 생략한 b는 b = 20; 코드가 실행되기 전까지는 존재하지 않습니다.
+        document.write('var 사용 : ' + a);  // undefined
+        var a = 10;
+
+        // document.write(b);  // ReferenceError : b is not defined
+        // b = 20;
+
+        document.write('<hr>');
+
+        // 3) 전역 객체 property 생성 측면에서 var 사용과 var 생략 차이
+        // = 전역 scope에서 var을 사용한 경우 변수는 전역 객체(브라우저의 경우 window)의
+        // non-configurable property로 저장됩니다.
+        // 반면에 var을 생략한 경우, 변수는 전역 객체의 property로 저장됩니다.
+        // 따라서 var을 생략한 경우에는 delete 연산자를 이용해서 삭제될 수 있는 반면,
+        // var을 사용한 경우 삭제되지 않습니다.
+        var a = 10;
+        b = 20;
+        document.write('window 객체 사용 : ' + window.a + ', ' + window.b);  // 10 20
+
+        document.write('<hr>');
+
+        delete window.a;
+        delete window.b;
+
+        document.write('var 사용 : ' + window.a);  // 10
+        document.write('<hr>');
+        document.write('var 생략 : ' + window.b);  // undefined
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

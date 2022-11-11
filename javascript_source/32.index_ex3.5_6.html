@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //인코딩, 디코딩함수
+        var encodeStr = '자바스크립트';
+        document.write(encodeURIComponent(encodeStr));
+        document.write('<hr>');
+        var decodeStr = encodeURIComponent(encodeStr);
+        document.write(decodeURIComponent(decodeStr));
+        document.write('<hr>');
+        //숫자, 유한 무한 값 판별함수
+        var num1 = '장나라';
+        if(!isNaN(num1)){
+            document.write('숫자입니다!');
+        } else {
+            document.write('숫자가 아닙니다');
+        }
+        document.write('<hr>');
+        var num2 = 1 / 0;
+        if(isFinite(num2)){
+            document.write('유한값 입니다!')
+        } else {
+            document.write('무한값 입니다!')
+        }
+        document.write('<hr>');
+        //숫자, 문자 변환 함수
+        var num3 = '10';
+        document.write('숫자 ' + Number(num3));
+        document.write('<hr>');
+        var num4 = '100.33px';
+        document.write(parseInt(num4));       //정수 부분만 숫자로 변환 
+        document.write('<hr>');             
+        var num5 = '100.33%'
+        document.write(parseFloat(num5));     //소수를 포함한 숫자로 변환
+        document.write('<hr>');
+        var num6 = 10;
+        document.write(typeof num6);          //10 : number
+        document.write('<hr>');
+        document.write(typeof String(num6));  //'10' : string
+        document.write('<hr>');
+
+        //자바스크립트 코드 변경 함수
+        var str1 = 'var num7 = 10';
+        var str2 = 'var num8 = 20';
+        eval(str1); //eval(str1)  ---------> var num7 = 10;
+        eval(str2); //eval(str2)  ---------> var num8 = 20;
+        document.write(num7 + num8); //(num7 + num8)  ---------> (10 + 20) --------> 30
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

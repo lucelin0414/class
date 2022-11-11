@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>자동 완성 기능</legend>
+            <p><label for="phone"> 전화번호 </label><input type="tel" id="phone" autocomplete="off" title="전화번호 입력"></p>
+            <p><label for="email"> 이메일 </label><input type="email" id="email" autocomplete="on" title="이메일 입력"></p>
+            <input type="submit" value="확인">
+            <input type="reset" value="취소">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>정규식 속성</legend>
+            <p><label for="tel"> 휴대폰 번호 </label><input type="tel" pattern="\d{3}-\d{3,4}-\d{4}" required="required" title="휴대폰 번호는 숫자 3자리 - 숫자 3자리 또는 4자리 - 숫자 4자리 로 입력해주세요."></p>
+        <p>
+            <input type="submit" value="확인">
+            <input type="reset" value="취소">
+        </p>
+        </fieldset>
+    </form>
+</body>
+</html>

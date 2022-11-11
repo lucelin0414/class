@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // for문에서 var로 선언한 변수 j는 if나 for와 같은 block 레벨 아닌 function 레벨에서 범위가 정해지기 때문에,
+        // for 문 안에서 var로 선언한 변수 i도 block을 벗어나서 유효하게 되는 문제점이 있습니다.
+        for(var j = 0; j < 5; j++){
+            document.write('2) 블록 안에 ' + j + '<br>');            
+        }
+        document.write('<hr>');
+        document.write('@ 2) 블록 밖에 ' + j);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

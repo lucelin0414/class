@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역 변수와 지역 변수 선언 위치별 차이 이해</title>
+    <script>
+        //함수 블록 {} 안에 있는 kor 변수를 var로 정의하였습니다. 함수 블록{} 안에서
+        //var로 선언된 변수는 지역 변수가 되며, 함수 블록 {} 밖의 전역 변수 kor과
+        //다른 별도의 변수가 됩니다. 즉, 함수 블록 {} 안에 지역 변수는 반드시 var로
+        //선언해 주어야 하며, 함수의 지역 변수는 함수 블록 {} 밖에서 사용할 수 없습니다.
+        var kor = 90;
+        function getScore(){
+            var kor = 100;  //전역 변수
+            console.log(kor);  //100
+        } 
+        getScore();
+        console.log(kor); //90
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

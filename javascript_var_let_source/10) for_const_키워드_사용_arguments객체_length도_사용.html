@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arguments 객체 활용</title>
+    <script>      
+
+        // arguments 객체 사용 함수 만들 경우, for문 안에 고정형 변수 const를 사용하게 되면,
+        // const t = 0; 일 경우인, arguments[t] 값이 arguments[0]인 html만 나타납니다.        
+        function showSubject(){            
+            for(const t=0; t < arguments.length; t++) {  // arguments.length = 4;
+                document.write('const 키워드 변수 t 인덱싱 인수값 = ' + arguments[t] + '<br>');             
+            }
+        }
+        showSubject('html', 'css', 'javascript', 'jQuery');   
+        document.write('<hr>');
+        document.write('@ 3) 블록 밖에 ' + t);                        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

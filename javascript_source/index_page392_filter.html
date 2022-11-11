@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //filter() 메서드 : 조건에 맞는 배열 요소들만 새로운 배열로 만들어 줍니다.
+        var data = ['javascript', 20, 30, 'jQuery'];
+        // data.filter(function(value, index, array){
+            // document.write(value + ' ');
+            // document.write(index + ' ');
+            // document.write(array + ' ' + '<hr>')
+
+        // })
+        var num = data.filter(function(value){    //data의 배열 값 중 number 데이터만 num 변수의 배열로 만들어줍니다.
+            return typeof value === 'number';        
+        });
+        document.write(num.toString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

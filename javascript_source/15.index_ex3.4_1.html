@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <script>
+        var age = prompt('나이 입력', '');  //''는 작은 따옴표 두개 입니다.
+        var admissionFee = '';
+        if(age < 13 || age >=65){             //age = 13미만 또는 65 이상 일경우 true
+            admissionFee = '2,000원'
+        } else if (age >= 13 && age < 20) {   //age = 13이상 20미만 일때 true
+            admissionFee = '4,000원'
+        } else {                              //age = 20이상 65 미만 일때 ture
+            admissionFee = '6,000원'
+        }
+        document.write(admissionFee);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

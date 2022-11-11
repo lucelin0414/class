@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        li{
+            margin: 5px;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".list1 > li[class='list_1']").css("border", "2px solid red");
+            $(".list1 > li[class!='list_1']").css("border", "2px solid orange");
+            // li 요소 중 class가 'list'를 포함하는 요소를 선택합니다. 이때, 'list' 앞뒤로 연결된 문자가 없어야 합니다. 즉, 'bg list'는 선택되지만, 'bg_list'는 선택되지 않습니다.
+            $(".list2 > li[class~='list']").css("background", "yellow");
+            // li 요소 중에서 class가 'list'를 포함하는 요소를 모두 선택합니다.
+            $(".list2 > li[class*='list']").css("border", "2px solid green");
+            // li 요소 중에서 class가 'list'나 'list-'로 시작하는 요소를 선택합니다.
+            $(".list3 > li[class|='list").css("border", "2px solid blue");
+            // li 요소 중에서 class가 'list'로 시작하는 요소를 선택합니다.
+            $(".list4 > li[class^='list']").css("border", "2px solid navy");
+            // li 요소 중에서 class가 'list'로 끝나는 요소를 선택합니다.
+            $(".list4 > li[class$='bg']").css("background", "purple");
+        });        
+    </script>
+</head>
+<body>
+    <ul class="list1">
+        <li class="list_1">내용1_1</li>
+        <li class="list_2">내용1_2</li>
+        <li class="list_3">내용1_3</li>
+    </ul>
+    <ul class="list2">
+        <li class="list bg">내용2_1</li>
+        <li class="list_1">내용2_2</li>
+        <li class="list_2">내용2_3</li>
+    </ul>
+    <ul class="list3">
+        <li class="list">내용3_1</li>
+        <li class="list-1">내용3_2</li>
+        <li class="list-bg">내용3_3</li>
+    </ul>
+    <ul class="list4">
+        <li class="list">내용4_1</li>
+        <li class="list-1">내용4_2</li>
+        <li class="list-bg">내용4_3</li>
+    </ul>
+</body>
+</html>

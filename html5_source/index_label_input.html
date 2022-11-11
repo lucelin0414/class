@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>label 요소</h1>
+    <form action="#" method="post">
+        <table>
+            <caption>회원가입 입력</caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row"><label for="inputId">아이디</label></th>
+                    <td><input type="text" id="inputId" title="아이디 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="inputPw">비밀번호 입력</label></th>
+                    <td><input type="text" id="inputPw" title="비밀번호 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="confirmPw">비밀번호 재입력</label></th>
+                    <td><input type="text" id="confirmPw" title="비밀번호 재입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="email">이메일</label></th>
+                    <td><input type="text" id="email" title="이메일 아이디 입력">@ <input type="text" title="이메일 주소 입력"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="hp">핸드폰 번호</label></th>
+                    <td>
+                        <select name="" id="">
+                            <option>선택</option>
+                            <option>010</option>
+                            <option>011</option>
+                        </select>
+                        <input type="text" id="hp" title="휴대폰 번호 중간 4자리 입력">- <input type="text" title="휴대폰 번호 끝 4자리 입력">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <input type="submit" value="회원가입">
+            <input type="reset" value="취소">
+        </div>
+    </form>
+</body>
+</html>
