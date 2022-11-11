@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .flexbox{
+            display: flex;
+            display: -webkit-flex;
+            align-items: stretch;
+            -webkit-align-items: stretch;
+            height: 200px;
+            background: #ccc;
+        }
+        .flexbox>div{
+            flex: 1 1 100px;
+            -webkit-flex: 1 1 100px;
+            background: darkblue;
+            margin: 10px;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div style="order: 3;">child1</div>
+        <div style="order: 4;"><h2>child2</h2></div>
+        <div style="order: 2;">child3</div>
+        <div style="order: 5;">child4</div>
+        <div style="order: 1;">child5</div>
+
+    </div>
+</body>
+</html>

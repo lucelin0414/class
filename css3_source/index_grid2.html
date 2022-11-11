@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .wrap{
+            display: grid;
+            grid-template-columns: 33% 34% 33%;
+            grid-template-rows: 100px 100px 100px;
+        }
+        .wrap > div{margin: 2px; padding: 10px; font-size: 20px;}
+        .grid1{
+            grid-column-start: 1; grid-column-end: 3;
+            grid-row-start: 1; grid-row-end: 2;
+            background-color: #579;
+        }
+        .grid2{
+            grid-column-start: 3; grid-column-end: 4;
+            grid-row-start: 1; grid-row-end: 2;
+            background-color: #68a;
+        }
+        .grid3{
+            grid-column-start: 1; grid-column-end: 2;
+            grid-row-start: 2; grid-row-end: 4;
+            background-color: #79b;
+        }
+        .grid4{
+            grid-column-start: 2; grid-column-end: 4;
+            grid-row-start: 2; grid-row-end: 3;
+            background-color: #8ac;
+        }
+        .grid5{
+            grid-column-start: 2; grid-column-end: 3;
+            grid-row-start: 3; grid-row-end: 4;
+            background-color: #9bd;
+        }
+        .grid6{
+            grid-column-start: 3; grid-column-end: 4;
+            grid-row-start: 3; grid-row-end: 4;
+            background-color: #ace;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="grid1">GRID1</div>
+        <div class="grid2">GRID2</div>
+        <div class="grid3">GRID3</div>
+        <div class="grid4">GRID4</div>
+        <div class="grid5">GRID5</div>
+        <div class="grid6">GRID6</div>
+    </div>
+</body>
+</html>

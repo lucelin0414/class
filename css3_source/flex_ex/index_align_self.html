@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .flexbox{
+            display: flex;
+            display: -webkit-flex;
+            height: 200px;
+            background: #ccc;
+            align-items: flex-start;
+            -webkit-align-items: flex-start;
+        }
+        .flexbox > div{
+            flex: 1;
+            -webkit-flex: 1;
+            background: darkblue;
+            margin: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+        .flexbox > div:nth-child(3){
+            align-self: flex-end;
+            -webkit-align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div><img src="../img/flex.png" alt="flex이미지"></div>
+        <div><img src="../img/flex.png" alt="flex이미지"></div>
+        <div><img src="../img/flex.png" alt="flex이미지"></div>
+        <div><img src="../img/flex.png" alt="flex이미지"></div>
+        <div><img src="../img/flex.png" alt="flex이미지"></div>
+    </div>
+</body>
+</html>

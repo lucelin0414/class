@@ -1,0 +1,5 @@
+@charset "utf-8";
+p#nice{color: red;}
+.price{color: blue; font-weight: bold;}
+.fontStyle{font-style: italic; text-decoration: underline;}
+p, span{color: blueviolet !important;}
