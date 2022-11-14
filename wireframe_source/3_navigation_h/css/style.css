@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/* CSS 파일을 만들어 리셋(초기화) 처리를 해줍니다. */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "맑은 고딕";
+    font-size: 14px;
+}
+
+/* 여기서부터 와이어프레임코딩 시작입니다! */
+#box{
+    width: 1200px;
+    margin: 0px auto; /* position이 static 상태의 박스 가운데 정렬 */
+}
+.head_box{
+    width: 1200px;
+    height: 100px;
+    background: red;
+}
+.logo{
+    width:250px;
+    height: 100%;
+    float:left;
+    background:chartreuse;
+}
+.navi{
+    width: 950px;
+    height: 100%;
+    float:right;
+    background: skyblue;
+}
+
+.slide_box{
+    width: 1200px;
+    height: 300px;
+    background: tomato;
+    /* 헤더 박스 자식들의 float 해제 */
+    clear: both; 
+    /* 앞서, float 사용 후 float 해제할 경우 반드시 다음 요소에서
+       float를 해제해 줘야 함. 해제는 보통 clear: both; 를 사용함 */
+}
+
+.content_box{
+    width: 1200px;
+    height: 200px;
+    background: green;
+}
+
+.notice_box{
+    width: 400px;
+    height: 100%;
+    background: yellow;
+    float:left;
+}
+
+.banner_box{
+    width: 400px ;
+    height: 100%;
+    background: olive;
+    float: left;
+}
+
+.icon_box{
+    width: 400px ;
+    height: 100%;
+    background: skyblue;
+    float: left;
+}
+
+.footer_box{
+    width: 1200px;
+    height: 100px;
+    background: blue;
+    /* 컨텐츠 박스 자식들의 float 해제 */
+    clear: both; 
+    /* 앞서 float 사용 후 float 해제할 경우 반드시 다음 요소에서
+       float를 해제해 줘야 함. 해제는 보통 clear: both; 를 사용함 */
+}
+
+.down_logo{
+    width: 250px;
+    height: 100%;
+    background: burlywood;
+    float: left;
+}
+.copyright{
+    width: 700px;
+    height: 100%;
+    background: cadetblue;
+    float:left;
+}
+
+.sns{
+    width: 250px;
+    height: 100%;
+    background: lightcoral;
+    float: left;
+}

@@ -1,0 +1,95 @@
+*{
+	margin:0; 
+	padding:0; 
+	list-style:none; 
+	text-decoration:none; 
+	font-family:"맑은 고딕"; 
+	font-size:14px;
+	}
+#box{
+	width:1000px;
+	height:650px;
+	margin:0 auto;
+	background:#efefef;
+}
+.left_box{
+	width:200px;
+	height:100%;
+	float:left;
+}
+.logo{
+	width:200px;
+	height:100px;
+	background:orange;
+}
+
+/* 다음 자리에 .navi 부터 소스 코딩 */
+
+
+
+
+
+
+
+.right_box{
+	width:800px;
+	height:100%;
+	float:right;
+	background:blue;
+}
+.slide{
+	width:800px;
+	height:350px;
+	background:yellow;
+}
+.contents{
+	width:800px;
+	height:200px;
+	background:skyblue;
+}
+.notice_box{
+	width:280px;
+	height:100%;
+	float:left;
+	background:#999999;
+}
+.banner_box{
+	width:280px;
+	height:100%;
+	float:left;
+	background:#555555;
+}
+.icon_box{
+	width:240px;
+	height:100%;
+	float:left;
+	background:#333333;
+}
+.footer{
+	width:800px;
+	height:100px;
+	background:olivegreen;
+	clear:both;
+}
+.down_logo{
+	width:200px;
+	height:100%;
+	float:left;
+	background:olive;
+}
+.copyright{
+	width:600px;
+	height:100%;
+	float:right;
+	background:pink;
+}
+.down_menu{
+	width:100%;
+	height:50px;
+	background:skyblue;
+}
+.copy{
+	width:100%;
+	height:50px;
+	background:pink;
+}
