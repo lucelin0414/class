@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Plugin </title>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="css/jquery.bxslider.min.css">
+<style>
+	*{margin: 0;padding: 0;}
+	#gallery_wrap{
+		margin: 0 auto;
+		width: 640px;
+	}
+</style>
+<script>
+	$(function(){
+		$('.slide_gallery').bxSlider({
+			auto:true,  //자동으로 애니메이션 시작
+			autoControls:true,   //시작 및 중지 버튼 표시
+			speed:1000,   //애니메이션 전환 속도 설정(1000 = 1000ms = 1s = 1초)
+			pause:3000,   //애니메이션 유지 시간(3000 = 3000ms = 3s = 3초)
+			stopAutoOnClick:true,  //이전(<)또는 다음(>) 버튼을 누르면 슬라이드가 정지됨
+			pager:true    //pager Default 기본값(pager:false 페이지 표시 안함)
+		});
+	});
+</script>
+</head>
+<body>
+<div id="gallery_wrap">
+	<ul class="slide_gallery">
+		<li><img src="images/pic_1.jpg" alt="사진1"></li>
+		<li><img src="images/pic_2.jpg" alt="사진2"></li>
+		<li><img src="images/pic_3.jpg" alt="사진3"></li>
+		<li><img src="images/pic_4.jpg" alt="사진4"></li>
+		<li><img src="images/pic_5.jpg" alt="사진5"></li>
+		<li><img src="images/pic_6.jpg" alt="사진6"></li>
+		<li><img src="images/pic_7.jpg" alt="사진7"></li>
+		<li><img src="images/pic_8.jpg" alt="사진8"></li>
+	</ul>
+</div>
+</body>
+</html>

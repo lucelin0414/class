@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> Plugin </title>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script>
+	//제이쿼리 UI에서 제공해주는 datepicker() 메서드 활용함.
+$( function() {
+    $( "#startDate" ).datepicker({
+		minDate: -1, //오늘 기준 하루 전 (-1일)
+		maxDate: "1m + 10" //오늘 기준 다음달(1M) 10일 후(+10)
+	});
+  } );
+</script>
+</head>
+<body>
+	<p>
+	<label for="startDate">날짜선택</label>
+	<input type="text" name="startDate" id="startDate">
+	</p>
+</body>
+</html>
