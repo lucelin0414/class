@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function getText(){
+        $.ajax({
+            url : "data.txt",
+            type : "post",
+            dataType : "text",   //서버로부터 응답 받는 dataType은 text로 합니다.
+            success: function(rec_data){
+                $("#result").text(rec_data);
+            }
+        });
+        };
+
+        // ajax 통신 활용 data2.html 파일 문자열 인식 소스 코딩
+
+        function getHtml(){
+        $.ajax({
+            url : "data2.html",
+            type : "post",
+            dataType : "html",    //서버로부터 응답 받는 dataType은 html로 합니다.
+            success: function(rec_data){
+                $("#result").html(rec_data);
+            }
+        });
+        };
+        //ajax 통신 활용 data3.xml 파일 문자열 인식 소스 코딩
+        function getXml(){
+            $.ajax({
+                url : "data3.xml",
+                type : "post",
+                dataType : "xml",
+                success : function(rec_data){
+                    var data = $(rec_data).find("data");
+                    $(data).each(function(idx, obj){
+                        var str1 = $(obj).find("str1");
+                        var str2 = $(obj).find("str2");
+
+                        var str11 = $(str1).text();
+                        var str12 = $(str2).text();
+                        
+                        //xml은 문자열로 표현이 가능합니다.
+                        //이에 비해, json은 다양한 표현이 가능합니다
+                        $("#result").append("str1 :" + str11 + "<br />");
+                        $("#result").append("str2 :" + str12 + "<br />");
+                    });
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getText()">문자열 데이터</button>
+    <button onclick="getHtml()">HTML 데이터</button>
+    <button onclick="getXml()">XML데이터</button>
+    <div id="result"></div>
+</body>
+</html>
