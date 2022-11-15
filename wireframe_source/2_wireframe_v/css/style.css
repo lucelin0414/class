@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS파일을 만들어 리셋(초기화) 처리를 해줍니다. */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "맑은 고딕";
+    font-size: 14px;
+}
+
+/* 여기서부터 와이어프레임 코딩 시작합니다! */
+#box{
+    width: 1000px;
+    height: 650px;
+    /* position이 static 상태의 박스 가운데 정렬 처리 */
+    margin: 0 auto;
+    background-color: lightcoral;
+}
+.left_box{
+    width: 200px;
+    height: 100%;   /*650px*/
+    float: left;
+    background-color: red;
+}
+.logo{
+    width: 100%;    /*200px*/
+    height: 100px;
+    background-color: green;
+}
+.navi{
+    width: 100%;
+    height: 550px;
+    background-color: orange
+}
+
+.right_box{
+    width: 800px;
+    height: 100%;
+    float: right;
+    background-color: blue;
+}
+.slide{
+    width: 800px;
+    height: 350px;
+    background-color: yellow;
+}
+.content{
+    width: 800px;
+    height: 200px;
+    background-color: skyblue;
+}
+.notice_box{
+    width: 280px;
+    height: 100%;
+    background-color: tomato;
+    float: left;
+}
+.banner_box{
+    width: 280px;
+    height: 100%;
+    float: left;
+    background-color: violet;
+}
+.icon_box{
+    width: 240px;
+    height: 100%;
+    float: left;
+    background-color: lightgreen;
+}
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: olive;
+    clear: both;
+}
+.down_logo{
+    width: 240px;
+    height: 100%;
+    float: right;
+    background-color: pink;
+}
+.copyright{
+    width: 100%;
+    height: 100%;
+}
+.down_menu{
+    width: 100%;
+    height: 50%;
+    background-color: skyblue;
+}
+.copy{
+    width: 100%;
+    height: 50%;
+    background-color: springgreen;
+}

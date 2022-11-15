@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS초기화 */
+*{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-family: "맑은 고딕";
+    color: #222328;
+}
+
+body{
+    width: 1000px;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    display: block;
+}
+header{
+    float: left;
+}
+.top{
+    float: left;
+    height: 650px;
+    width: 200px;
+    /* background-color: aqua; */
+}
+
+.logo{
+    float: left;
+    height: 40px;
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* background-color: aquamarine; */
+}
+
+.menu{
+    width: 180px;
+    top: 100px;
+    text-align: center;
+}
+
+.navi > li{
+    float: left;
+    width: 180px;
+}
+
+.navi > li > a{
+    height: 40px;
+    width: 180px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #222323;
+    color: white;
+}
+
+.navi > li > a:hover{
+    background-color: #930930;
+    color: #ff0;
+}
+
+.imgslide{
+    float: right;
+    height: 350px;
+    width: 800px;
+    /* background-color: black */
+}
+.contents{
+    float: right;
+    height: 200px;
+    width: 800px;
+    /* background-color: aliceblue; */
+}
+
+.notice{
+    float: left;
+    height: 200px;
+    width: 300px;
+}
+
+.gallery{
+    float: left;
+    height: 200px;
+    width: 300px;
+}
+
+.shortcut{
+    float: left;
+    height: 200px;
+    width: 200px;
+}
+
+footer{
+    float: right;
+    /* background-color: yellow; */
+}
+.bottom{
+    float: left;
+    height: 100px;
+    width: 800px;
+}
+
+.copy{
+    float: left;
+    height: 100px;
+    width: 600px;
+}
+
+.site{
+    float: right;
+    height: 100px;
+    width: 200px;
+}
+
+.sns{
+    float: right;
+    height: 50px;
+    width: 200px;
+}
+
+.familysite{
+    float: right;
+    height: 50px;
+    width: 200px;
+}

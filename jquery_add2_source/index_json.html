@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid #11d20a;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type: "Get",
+                url: "http://192.168.0.106/dataset/json_data.json",
+                dataType: "json",
+                //data 매개변수는 json_data.json의 전체 데이터가 들어갑니다.
+                success:function(data){
+                    // console.log(data);
+                    var elem = "";
+                    $.each(data, function(index, obj){
+                        elem += "<tr>";      //elem = "" + "<tr>"
+                        elem += "<th scope='row'>" + obj.id + "</th>"
+                        elem += "<th scope='row'>" + obj.first_name + "</th>"
+                        elem += "<th scope='row'>" + obj.last_name + "</th>"
+                        elem += "<th scope='row'>" + obj.email + "</th>"
+                        elem += "<th scope='row'>" + obj.gender + "</th>"
+                        elem += "</tr>";     //elem = "" + "</tr>"
+                    });
+                    $("table tbody").append(elem);
+                },
+                error:function(){
+                    console.log(xhr.status + " / " + xhr.errorText);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <caption>JSON 형식 저장 100명의 정보원 리스트</caption>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First_Name</th>
+                <th scope="col">Last_Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- json 데이터가 삽입될 자리 -->
+        </tbody>
+    </table>
+</body>
+</html>

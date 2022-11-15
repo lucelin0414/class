@@ -32,6 +32,79 @@
     float:right;
     background: skyblue;
 }
+.navi > ul{
+    display: inline;
+    font-size: 0;
+}
+.navi > ul > li{
+    /* 인라인화된 메인메뉴의 li을 블록 속성을 줄 수 있게 inline-block 지정함 */
+    display: inline-block;
+    /* 서브 메뉴를 메인메뉴 아래에 가두기 위해 position: relative 지정함 */
+    position: relative;
+    width: 300px;
+    height: 80px;
+    text-align: center;
+}
+
+/* a태그로 링크걸린 메인메뉴 글자 꾸미기 */
+.navi > ul > li > a{
+    /* 박스 배경색 지정을 위해 display: block 설정함. */
+    display: block;
+    /* 메인메뉴 상하 조절 */
+    line-height: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    /* 전환 효과를 1초동안 a태그에 적용해줌 */
+    transition: all 1s;
+}
+
+/* a태그로 링크걸린 메인 메뉴에 마우스 오버시 글자 꾸미기 */
+.navi > ul > li:hover > a{
+    text-decoration: underline;
+    background: chartreuse;
+    transition: all 1s;
+    color: darkorchid
+}
+
+/* 서브 메뉴 박스 */
+.menu_box{
+    /* 메인메뉴 영역 안에서 움직이기 위해 position: absolute 를 지정함 */
+    position: absolute;
+    height: 160px;
+    background: blueviolet;
+    /* 화면 로딩 시 보이지 않게 설정 */
+    display: none;
+    /* 박스 레이어가 겹칠 경우 노출 순서 우선순위 지정함 */
+    z-index: 10;
+}
+
+.menu_box > li{
+    /* 메인 메뉴와 서브 메뉴 정렬을 맞추기 위해 동일한 width값 지정함 */
+    width: 300px;
+    height: 40px;
+}
+
+/* a태그로 링크 걸린 서브 메뉴 글자 꾸미기 */
+.menu_box > li > a{
+    display: block;
+    font-size: 15px;
+    color: black;
+    background: blanchedalmond;
+    /* 서브 메뉴 상하 높이 지정함 */
+    line-height: 40px;
+    /* 전환 효과 적용 */
+    transition: all 1s;
+}
+
+/* a태그로 링크걸린 서브 메뉴에 마우스 오버시 글자 꾸미기 */
+
+.menu_box > li:hover > a{
+    background-color: chartreuse;
+    font-weight: bold;
+    /* 전환효과 적용 */
+    transition: all 1s;
+}
 
 .slide_box{
     width: 1200px;

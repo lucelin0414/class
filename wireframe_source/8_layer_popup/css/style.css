@@ -10,6 +10,88 @@
     font-size: 14px;
 }
 
+#popup{
+    /* 웹페이지 로딩 시에는 보이지 않게 설정함 */
+    display: none;
+}
+
+.body{
+    /* position: fixed로 팝업창의 위치를 지정함 */
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    /* position이 적용되어 있으므로 left: 50%; margin-left-(박스 크기의 1/2)로 중앙정렬함 */
+    left: 50%;
+    margin-left: -300px;
+    background: wheat;
+    border: 5px solid violet;
+    z-index: 20;
+    top: 200px;
+}
+
+/* 실제 팝업 내용이 들어갈 박스 스타일 지정 */
+.box{
+    width: 100%;
+    /* 아래 부분에 "닫기" 버튼을 위해 height를 80%만 지정함 */
+    height: 80%;
+    text-align: center;
+}
+
+.box > h1{
+    font-size: 40px;
+    font-family: "맑은 고딕";
+    font-weight: bold;
+    color: yellowgreen;
+    padding-top: 30px;
+}
+
+.box > li{
+    font-size: 25px;
+    font-family: "맑은 고딕";
+    font-weight: bold;
+    color: yellow;
+}
+
+.box > p {
+    width: 100%;
+    height: 30px;
+    /* background: red; */
+}
+
+/* 닫기 버튼이 들어갈 박스 스타일 지정 */
+
+.close{
+    width: 100%;
+    text-align: center;
+}
+
+.close > button{
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 팝업이 활성화 되었을 때 클래스 지정함.
+자바스크립트 사용을 위해 선택자를 반드시 붙여서 써 주어야 함 */
+
+#popup.active{
+    /* 자바스크립트에서 active 클래스를 활용하여 팝업창이 보이도록 display: block 지정함 */
+
+    display: block;
+
+    /* 지바스크립트에서 active 클래스 활성화 시 팝업창에 opacity:1을 적용함 */
+
+    opacity: 1;
+}
+
+/* .banner_box의 img 태그에 팝업 링크를 설정함 */
+
+.banner_box{
+    /* cursur:pointer로 커서를 pointer형식으로 지정함 */
+    cursor: pointer;
+}
+
 /* 여기서부터 와이어프레임코딩 시작입니다! */
 #box{
     width: 1200px;

@@ -24,11 +24,53 @@
 }
 
 /* 다음 자리에 .navi 부터 소스 코딩 */
-
-
-
-
-
+.navi{
+	width: 200px;
+	margin: 0 auto;
+}
+.navi > ul > li{
+	width: 100%;
+	/* background-color: red; */
+	text-align: center;
+}
+.navi > ul > li > a {
+	display: block;
+	line-height: 60px;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	/* 전환 효과 적용 */
+	transition: all 1s;
+}
+.navi > ul > li:hover > a {
+	text-decoration: underline;
+	background: #009688;
+	/* 전환 효과 적용 */
+	transition: all 1s;
+	color: white;
+}
+.menu_box{
+	display: block;
+	width: 200px;
+	background-color: #d4f6f3;
+	display: none;
+}
+.menu_box > li > a{
+	display: block;
+	font-size: 15px;
+	color: black;
+	background: #d4f6f3;
+	line-height: 40px;
+	/* 전환 효과 적용 */
+	transition: all 1s;
+}
+.menu_box > li > a:hover{
+	background: #76bab4;
+	font-weight: bold;
+	/* 전환 효과 적용 */
+	transition: all 1s;
+	color: white;
+}
 
 
 .right_box{

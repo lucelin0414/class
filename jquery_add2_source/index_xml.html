@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        h1{
+            text-align: center;
+        }
+        th, td{
+            border: 1px solid #11d20a;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url: "http://192.168.0.106/dataset/infoset.xml",
+                dataType: "xml",
+                //data 매개변수는 infoset.xml의 전체 데이터를 담아줍니다.
+                success:function(data){
+                    // console.log(data);
+                    var $data = $(data).find("people")
+                    // console.log($data)
+                    if($data.length > 0){
+                        var tb = $("<table />");
+                        $.each($data, function(i, o){
+                            var $id = $(o).find("id").text();
+                            var $first_name = $(o).find("first_name").text();
+                            var $last_name = $(o).find("last_name").text();
+                            var $email = $(o).find("email").text();
+                            var $gender = $(o).find("gender").text();
+
+                            var row = $("<tr />").append($("<td />").text($id),$("<td />").text($first_name),$("<td />").text($last_name),$("<td />").text($email),$("<td />").text($gender),);
+                            tb.append(row)
+                        })
+                    }
+                    $(".wrapper").append(tb);
+                }   
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JSON 형식 저장 100명의 정보원 리스트</h1>
+    <div class="wrapper">
+        <!-- 이 자리에 XML 데이터를 삽입 처리 합니다 -->
+    </div>
+</body>
+</html>
